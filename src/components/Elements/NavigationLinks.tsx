@@ -16,12 +16,12 @@ export function NavigationLinks_({ onClick, classNames }: NavigationLinksProps) 
     <ul className={classNames?.list}>
       <li className={classNames?.item}>
         <HashLink className={classNames?.link} onClick={onClick} smooth to="/#top">
-          Hero
+          Home
         </HashLink>
       </li>
       <li className={classNames?.item}>
         <HashLink className={classNames?.link} onClick={onClick} smooth to="/#about-me">
-          Me
+          About Me
         </HashLink>
       </li>
       <li className={classNames?.item}>

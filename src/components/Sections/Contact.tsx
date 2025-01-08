@@ -68,7 +68,7 @@ export function Contact() {
       />
 
       <div className="flex justify-between text-2xl 2xs:text-3xl xs:text-4xl font-righteous mb-10 mt-8 lg:mt-14">
-        <span>2023</span>
+        <span>2025</span>
         <span>Kirill Cherepanov</span>
       </div>
     </section>

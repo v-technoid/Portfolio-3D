@@ -42,22 +42,23 @@ export function Hero() {
       </div>
       <div className="main-layout mt-8 sm:mt-24" id="hero-about">
         <h2 className="text-4xl 2xs:text-5xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 font-righteous relative font-bold">
-          Professional <br className="sm:hidden" /> Full Stack{' '}
-          <img
+          Engineer | <br className="sm:hidden" /> Designer{' '}
+          <br></br>
+          {/* <img
             src={diamond}
             alt=""
             className="inline sm:hidden rotate-[30deg] absolute bottom-10 2xs:bottom-[52px] h-10 2xs:h-12 "
-          />
+          /> */}
           <br />
-          Web Developer
-          <img
+          Web Developer | App Developer
+          {/* <img
             src={diamond}
             alt=""
             className="hidden sm:inline rotate-[30deg] absolute bottom-0 h-16 md:h-20 lg:h-24 ml-4"
-          />
+          /> */}
         </h2>
         <p className="text-xl xs:text-2xl md:w-7/12 font-semibold">
-          Developing Creative and Innovative Web Applications. Tackling tricky business problems.
+        Crafting Scalable Solutions | Building Seamless Experiences.
         </p>
       </div>
       <Marquee
@@ -66,7 +67,7 @@ export function Hero() {
         speed={100}
       >
         {/* It works, so it's alright */}
-        READY FOR HIRE!{'ㅤ·ㅤ'}READY FOR HIRE!{'ㅤ·ㅤ'}
+        Code. Create. Innovate. Repeat.{'ㅤ·ㅤ'}Code. Create. Innovate. Repeat.{'ㅤ·ㅤ'}
       </Marquee>
     </section>
   );

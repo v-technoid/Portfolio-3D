@@ -1,13 +1,15 @@
-import { Hero, AboutMe, Projects, Contact, Skills } from '@/components';
+import { Hero, AboutMe, Projects, Contact, Skills, TapeSection } from '@/components';
+
 
 export function Landing() {
   return (
     <main>
       <Hero />
       <AboutMe />
-      <Skills />
-      <Projects />
-      <Contact />
+      <TapeSection />
+      {/* <Skills />
+      <Projects /> */}
+      {/* <Contact /> */}
     </main>
   );
 }

@@ -7,8 +7,8 @@ import { useMinWidthMediaQuery } from '@/hooks';
 import { RotatingText } from '@/components';
 
 const backgroundImages = {
-  dark: new URL('../../assets/images/backgroundDark.webp', import.meta.url).toString(),
-  light: new URL('../../assets/images/backgroundLight.webp', import.meta.url).toString(),
+  dark: new URL('../../assets/images/Background2.jpeg', import.meta.url).toString(),
+  light: new URL('../../assets/images/light3.jpg', import.meta.url).toString(),
 };
 
 export function HeroCanvas() {
@@ -50,14 +50,14 @@ export function HeroCanvas() {
         position={[0, 4, 0]}
         backgroundTexture={backgroundTexture}
       >
-        Kirill
+        Vishnuppriyan
       </RotatingText>
       <RotatingText
         isControlled={isControlled}
         position={[0, -4, 0]}
         backgroundTexture={backgroundTexture}
       >
-        Cherepanov
+        PL
       </RotatingText>
     </>
   );
