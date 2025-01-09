@@ -1,23 +1,33 @@
 import { Fragment } from "react";
-import { ReactComponent as Star } from "../../assets/images/Star.svg";
+import { ReactComponent as Star } from "/src/assets/images/Star.svg";
 
 const words: string[] = [
-  "Performant",
-  "Accessible",
-  "Secure",
-  "Interactive",
-  "Scalable",
-  "User Friendly",
-  "Responsive",
-  "Maintainable",
-  "Search Optimized",
-  "Usable",
-  "Reliable",
+  "Results-Driven",
+  "Innovative",
+  "Detail-Oriented",
+  "Proactive",
+  "Collaborative",
+  "Strategic",
+  "Efficient",
+  "Adaptable",
+  "Problem-Solver",
+  "Quality-Focused",
+  "Goal-Oriented",
+  "Customer-Centric",
+  "Leadership",
+  "Tech-Savvy",
+  "Creative",
+  "Resourceful",
+  "Analytical",
+  "Dependable",
+  "Agile",
+  "Fast-Paced",
+  "Forward-Thinking",
 ];
 
 export const TapeSection = () => {
   return (
-    <div className="py-16 lg:py-24 overflow-x-clip bg-red-500">
+    <div className="py-16 lg:py-24 overflow-x-clip">
       <div className="bg-gradient-to-r from-emerald-300 to-sky-400 overflow-x-clip -rotate-3 -mx-1">
         <div className="flex [mask-image:(linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex flex-none gap-4 pr-4 py-3 animate-move-left [animation-duration:30s]">
