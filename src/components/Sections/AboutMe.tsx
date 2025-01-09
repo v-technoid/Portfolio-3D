@@ -137,8 +137,8 @@ export const AboutSection = () => {
 
   return (
     <>
+    <section id="about-me">
       <RevealLinks />
-      <section id="about">
         <div className="py-20 lg:py-28">
           <div className="container">
             <SectionHeader
