@@ -139,12 +139,12 @@ export const AboutSection = () => {
     <>
     <section id="about-me">
       <RevealLinks />
-        <div className="py-20 lg:py-28">
+        <div className="py-5 lg:py-5">
           <div className="container">
             <SectionHeader
-              eyebrow="About Me"
-              title="A Glimpse Into My World"
-              description="Learn more about who I am, what I do and what inspires me."
+              eyebrow="Undergrad @ Vellore Institute of Technology, Chennai"
+              title="Exploring My Universe"
+              description="Dive into my journey, discover my passions, and uncover what drives my creativity."
             />
             <div className="mt-20 flex flex-col gap-8">
               {/* Toolbox Section */}

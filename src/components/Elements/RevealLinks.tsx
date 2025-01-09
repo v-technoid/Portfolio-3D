@@ -7,7 +7,7 @@ export const RevealLinks = () => {
 
   return (
     <section
-      className={`grid place-content-center gap-2 px-8 py-24 text-black ${
+      className={`grid place-content-center gap-2 px-8 py-5 text-black ${
         theme === "dark" ? "text-white" : "text-black"
       }`}
     >

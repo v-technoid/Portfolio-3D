@@ -13,13 +13,13 @@ function Logo_({ className }: LogoProps) {
     let newColor;
 
     if (hours >= 6 && hours < 12) {
-      newColor = '#AB1FC7FF'; // Morning: Yellow
+      newColor = '#89E677FF'; // Morning: Yellow
     } else if (hours >= 12 && hours < 18) {
-      newColor = '#1EFF87FF'; // Afternoon: Blue
+      newColor = '#77DFE6FF'; // Afternoon: Blue
     } else if (hours >= 18 && hours < 21) {
-      newColor = '#FF8C00'; // Evening: Orange
+      newColor = '#1E0404FF'; // Evening: Orange
     } else {
-      newColor = '#000590FF'; // Night: Purple
+      newColor = '#FFFFFFFF'; // Night: Purple
     }
     setColor(newColor);
   };
