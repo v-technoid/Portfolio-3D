@@ -19,6 +19,11 @@ import { ReactComponent as Reacticon } from "../../assets/images/Reacticon.svg";
 import { ReactComponent as Github } from "../../assets/images/Github.svg";
 import mapImage from "../../assets/images/mapImage.png";
 import memojiavatar4 from "../../assets/images/memojiavatar4.png";
+import GridGlobe from "../Elements/GridGlobe";
+import BackgroundLinesDemo from "../Elements/AboutContent";
+import AnimatedText from "../Elements/TextReveal";
+import TextGenerateEffectDemo from "../Elements/Text-Generate";
+
 
 const toolboxItems = [
   { title: "Next.js", iconType: Nextjs },
@@ -139,10 +144,16 @@ export const AboutSection = () => {
     <>
     <section id="about-me">
       <RevealLinks />
+      < p className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-xl md:text-2xl lg:text-4xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
+    Software Engineer Intern @ Visteon
+      </p>
+
+   <TextGenerateEffectDemo/>
+
         <div className="py-5 lg:py-5">
           <div className="container">
             <SectionHeader
-              eyebrow="Undergrad @ Vellore Institute of Technology, Chennai"
+              eyebrow="Artificial Intelligence | Machine Learning | Deep Learning"
               title="Exploring My Universe"
               description="Dive into my journey, discover my passions, and uncover what drives my creativity."
             />
@@ -200,7 +211,11 @@ export const AboutSection = () => {
                   </div>
                 </Card>
                 <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
-                  <img
+                <CardHeader
+                    title="My Zone"
+                    description="I'm very flexible with time zone communications."
+                  />
+                  {/* <img
                     src={mapImage}
                     alt="map"
                     className="h-full w-full object-cover object-left-top"
@@ -215,7 +230,8 @@ export const AboutSection = () => {
                         />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
+                  <GridGlobe/>
                 </Card>
               </div>
             </div>
