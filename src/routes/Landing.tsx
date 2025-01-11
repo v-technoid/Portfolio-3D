@@ -7,7 +7,6 @@ import {
   TapeSection
 } from "@/components";
 
-
 export function Landing() {
   return (
     <main>
