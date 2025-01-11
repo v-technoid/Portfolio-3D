@@ -1,7 +1,6 @@
+import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { HashLink } from 'react-router-hash-link';
-import { useEffect, useState } from 'react';
-
 import {
   Logo,
   ThemeSwitchButton,
@@ -17,6 +16,7 @@ import {
 } from '@/hooks';
 
 export function Navbar() {
+  const [isPreloadDone, setIsPreloadDone] = useState(false); // Add state to track preload
   const { isOpen, close, toggle } = useDisclosure();
   const drawerRef = useOnClickOutside<HTMLDivElement>(close);
   const isScreenMd = useMinWidthMediaQuery('md');
@@ -28,6 +28,19 @@ export function Navbar() {
     window.addEventListener('scroll', updatePosition, { passive: true });
     return () => window.removeEventListener('scroll', updatePosition);
   }, []);
+
+  // Simulate a preload finish (this could be linked to your preload animation or logic)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPreloadDone(true); // Set preload to done after a delay or when your actual preload is done
+    }, 3000); // Adjust this based on how long your preload takes
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Don't render Navbar until preload is done
+  if (!isPreloadDone) {
+    return null; // Or a loading component if needed
+  }
 
   return (
     <nav
@@ -77,7 +90,7 @@ export function Navbar() {
               <div className="text-center my-6 font-light">
                 Website portfolio of
                 <br />
-                <b className="font-bold">Kirill Cherepanov</b>
+                <b className="font-bold">VISHNUPPRIYAN PL</b>
               </div>
               <ContactLinks
                 classNames={{

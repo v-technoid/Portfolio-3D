@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Righteous&display=swap');
-
 /* This one is for theme switch button: https://web.dev/patterns/theming/theme-switch/ */
 @import 'https://unpkg.com/open-props/easings.min.css';
+
 
 @tailwind base;
 @tailwind components;
@@ -15,6 +15,7 @@
     @apply overflow-hidden min-h-screen flex flex-col cursor-default font-raleway transition-colors duration-300 ease-linear bg-main-reverse-0 dark:bg-main-0 selection:bg-opacity-80 selection:bg-accent-500 text-main-0 dark:text-main-reverse-0 dark:selection:text-main-0;
   }
 }
+
 
 h1 {
     font-size: 7rem;

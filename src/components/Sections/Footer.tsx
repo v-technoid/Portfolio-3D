@@ -1,0 +1,266 @@
+import React, { useEffect, useRef, useState, useContext } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaYoutube,
+  FaPaperPlane,
+} from "react-icons/fa";
+import toast from "react-hot-toast";
+import IndiaTime from "../../hooks/time"; // Adjust path as needed
+import { sendEmail } from "../../hooks/sendemail.ts"; // Adjust path as needed
+import { ColorThemeContext } from "../../providers"; // Import your context
+import Day from "../Elements/Day";
+import { FaXTwitter, FaInstagram } from "react-icons/fa6";
+import RandomizedTextEffect from "../../hooks/text-randomised";
+
+const currentYear = new Date().getFullYear();
+import '../../index.css'; // Assuming global styles include the font import
+
+import BackToTopButton from "../Elements/BacktoTop";
+
+// Contact Details Component
+const ContactDetails: React.FC = () => {
+  const [theme] = useContext(ColorThemeContext);
+  return (
+    <div
+      className={`flex flex-col items-start space-y-4 px-4 ${theme === "dark" ? "text-white" : "text-black"}`}
+    >
+      <h2 className="text-2xl font-medium">Contact Details</h2>
+      <ul className="w-full">
+        <li className="flex items-center space-x-2">
+          <a
+            href="tel:+19052994235"
+            className="underline-hover-effect-alt !pb-0"
+          >
+            +91 9944033851
+          </a>
+        </li>
+        <li className="flex items-center space-x-2">
+          <a
+            href="mailto:bilal.ikr@outlook.com?subject=Hello%20there&body=Hi%2C%20I%20have%20a%20question%20about..."
+            className="underline-hover-effect-alt !pb-0"
+          >
+            vishnutechnophile@gmail.com
+          </a>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+// Social Links Component
+const SocialLinks: React.FC = () => {
+  const [theme] = useContext(ColorThemeContext);
+
+  return (
+    <div
+      className={`flex flex-col items-start space-y-4 p-4 ${theme === "dark" ? "text-white" : "text-black"}`}
+    >
+      <h2 className="text-2xl font-medium">My Digital Spaces</h2>
+      <ul className="w-full">
+        <li className="flex items-center space-x-2 mb-1">
+          <FaGithub className="text-lg" />
+          <a
+            href="https://github.com/ikrambil"
+            className="underline-hover-effect-alt !pb-0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github
+          </a>
+        </li>
+        <li className="flex items-center space-x-2 mb-1">
+          <FaLinkedinIn className="text-lg" />
+          <a
+            href="https://www.linkedin.com/in/bilal-ikram/"
+            className="underline-hover-effect-alt !pb-0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </li>
+        <li className="flex items-center space-x-2 mb-1">
+          <FaXTwitter className="text-lg" />
+          <a
+            href="https://github.com/ikrambil"
+            className="underline-hover-effect-alt !pb-0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Twitter
+          </a>
+        </li>
+        <li className="flex items-center space-x-2 mb-1">
+          <FaInstagram className="text-lg" />
+          <a
+            href="https://github.com/ikrambil"
+            className="underline-hover-effect-alt !pb-0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+// Footer Form Component
+const FooterForm: React.FC = () => {
+  const [pending, setPending] = useState(false);
+  const [theme] = useContext(ColorThemeContext);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    setPending(true);
+
+    try {
+      const { data, error } = await sendEmail(formData);
+      if (error) {
+        toast.error(error);
+      } else {
+        toast.success("Email sent successfully!");
+      }
+    } catch (error) {
+      toast.error("Failed to send email.");
+    } finally {
+      setPending(false);
+    }
+  };
+
+  return (
+    <form
+      className={`flex flex-col space-y-8 ${theme === "dark" ? "text-white bg-black" : "text-black bg-[#f5f5f5]"} overflow-x-hidden`}
+      onSubmit={handleSubmit} 
+    >
+      <div className="flex">
+        <input
+          type="text"
+          placeholder="Your name"
+          name="name"
+          className={`input w-1/2 mr-4 p-3 border-2 ${theme === "dark" ? "border-[#f5f5f5] bg-black text-[#f5f5f5] placeholder-[#f5f5f5]" : "border-black bg-#f5f5f5 text-black placeholder-black"} rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5f5f5]`}
+          required
+        />
+        <input
+          type="email"
+          placeholder="Your email"
+          name="senderEmail"
+          className={`input w-1/2 ml-2 p-3 border-2 ${theme === "dark" ? "border-[#f5f5f5] bg-black text-[#f5f5f5] placeholder-[#f5f5f5]" : "border-black bg-#f5f5f5 text-black placeholder-black"} rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5f5f5]`}
+          required
+        />
+      </div>
+      <textarea
+        placeholder="Your message"
+        name="message"
+        className={`input p-3 border-2 ${theme === "dark" ? "border-[#f5f5f5] bg-black text-[#f5f5f5] placeholder-[#f5f5f5]" : "border-black bg-#f5f5f5 text-black placeholder-black"} h-18 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5f5f5]`}
+        required
+      ></textarea>
+      <div>
+        <button
+          type="submit"
+          className={`group flex items-center justify-center gap-2 ml-2 mb-2 h-[3rem] w-[8rem] ${theme === "dark" ? "bg-[#f6f2e5]" : "bg-black"} text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-[#f6f2e5] hover:text-[#292929] active:scale-105 dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65`}
+          disabled={pending}
+        >
+          {pending ? (
+            <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+          ) : (
+            <>
+              Submit{" "}
+              <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </>
+          )}
+        </button>
+      </div>
+    </form>
+  );
+};
+
+// Footer Content Component
+const FooterContent: React.FC<{ scrollProgress: any }> = ({
+  scrollProgress,
+}) => {
+  const y = useTransform(scrollProgress, [0, 1], [-700, 0]);
+  const [theme] = useContext(ColorThemeContext);
+
+  return (
+    <section style={{ y }} className="overflow-x-hidden mt-12 sm:mt-8">
+      <div
+        className={`text-[#f6f2e5] w-[100vw] ${theme === "dark" ? "text-white bg-black" : "text-black bg-[#f5f5f5]"} overflow-x-hidden`}
+      >
+        <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-10 overflow-x-hidden">
+          <div className="md:col-span-2 flex flex-col gap-4">
+            <h2 className="text-4xl font-medium mb-8">Let's talk</h2>
+            <h3 className="text-xl font-normal mb-8">
+              I am currently looking for internships or full-time opportunities.
+              Feel free to reach out if you want to just talk!
+            </h3>
+            <FooterForm />
+          </div>
+          <div className="flex flex-col md:mx-auto justify-between">
+            <ContactDetails />
+            <SocialLinks />
+            <div className={`flex flex-col items-start space-y-4 p-4 ${theme === "dark" ? "text-white bg-black" : "text-black bg-[#f5f5f5]"}`}>
+              <h2 className="text-2xl font-medium">Locale</h2>
+              <ul className="w-full">
+                <li className="flex items-center space-x-2">
+                  <span>
+                    <Day />
+                  </span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <span>India, Tamil Nadu</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <span>
+                    <IndiaTime />
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-span-1 md:col-span-3 flex flex-row justify-between items-center">
+            <div className="flex flex-col sm:flex-row align-text-bottom">
+              <div className="flex flex-col sm:flex-row mr-1" style={{ fontFamily: "'Doto', serif" }}>
+                © {currentYear}
+                <p
+                  className="font-semibold ml-1"
+                  id="contact"
+                  style={{ fontFamily: "'Doto', serif" }}
+                >
+                </p>
+                <RandomizedTextEffect  className="font-semibold ml-1"
+                  id="contact"
+                  style={{ fontFamily: "'Doto', serif" }} text='VISHNUPPRIYAN PL' />
+              </div>
+            </div>
+            <p style={{ fontFamily: "'Borel', italic" }}>Coded with 💔</p>
+            <BackToTopButton/>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Footer Component
+const Footer: React.FC = () => {
+  const container = useRef<HTMLDivElement>(null);
+  const paths = useRef<(SVGTextPathElement | null)[]>([]);
+  const [offset, setOffset] = useState(["start end", "end end"]);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: offset as any,
+  });
+
+  return (
+    <div ref={container}>
+      <FooterContent scrollProgress={scrollYProgress} />
+    </div>
+  );
+};
+
+export default Footer;

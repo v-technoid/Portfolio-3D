@@ -4,7 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 
 import { Icon, ScrollDownTextCircle, HeroCanvas, Spinner } from '@/components';
-
+import Preloader from '../../Preloader/Preloader';
 import diamond from '@/assets/images/diamond.png';
 
 export function Hero() {
@@ -14,7 +14,7 @@ export function Hero() {
         <Suspense
           fallback={
             <div className="mt-24 sm:mt-0 h-[400px] md:h-screen w-screen flex justify-center items-center">
-              <Spinner />
+             <Spinner />
             </div>
           }
         >

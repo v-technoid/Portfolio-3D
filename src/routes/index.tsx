@@ -5,6 +5,7 @@ import { Suspense, useLayoutEffect } from 'react';
 import { Navbar, Spinner } from '@/components';
 import { useRoutes } from 'react-router-dom';
 import { OscillatingLinesProvider } from '@/providers';
+import Preloader from '../Preloader/Preloader';
 
 const { Landing } = lazily(() => import('./Landing'));
 const { ProjectPage } = lazily(() => import('./ProjectPage'));
@@ -36,7 +37,7 @@ function AppLayout() {
       <Suspense
         fallback={
           <div className="h-screen w-screen flex items-center justify-center">
-            <Spinner />
+          <Spinner/> 
           </div>
         }
       >
