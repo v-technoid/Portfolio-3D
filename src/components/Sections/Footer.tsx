@@ -13,6 +13,7 @@ import { ColorThemeContext } from "../../providers"; // Import your context
 import Day from "../Elements/Day";
 import { FaXTwitter, FaInstagram } from "react-icons/fa6";
 import RandomizedTextEffect from "../../hooks/text-randomised";
+import AnimatedText from "../Elements/RiseUp";
 
 const currentYear = new Date().getFullYear();
 import '../../index.css'; // Assuming global styles include the font import
@@ -162,7 +163,12 @@ const FooterForm: React.FC = () => {
       <div>
         <button
           type="submit"
-          className={`group flex items-center justify-center gap-2 ml-2 mb-2 h-[3rem] w-[8rem] ${theme === "dark" ? "bg-[#f6f2e5]" : "bg-black"} text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-[#f6f2e5] hover:text-[#292929] active:scale-105 dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65`}
+          className={`group flex items-center justify-center gap-2 ml-2 mb-2 h-[3rem] w-[8rem] 
+  ${theme === "dark" ? 
+    "bg-[#f5f5f5] text-black border-black hover:bg-black hover:text-[#f5f5f5] hover:border-white" : 
+    "bg-black text-white border-white hover:bg-[#f5f5f5] hover:text-black hover:border-black"} 
+  border-2 rounded-full outline-none transition-all focus:scale-110 hover:scale-110 active:scale-105 disabled:scale-100 disabled:bg-opacity-65`}
+
           disabled={pending}
         >
           {pending ? (
@@ -170,7 +176,7 @@ const FooterForm: React.FC = () => {
           ) : (
             <>
               Submit{" "}
-              <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
+              <FaPaperPlane className="text-xs opacity-100 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
             </>
           )}
         </button>
@@ -193,7 +199,8 @@ const FooterContent: React.FC<{ scrollProgress: any }> = ({
       >
         <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-10 overflow-x-hidden">
           <div className="md:col-span-2 flex flex-col gap-4">
-            <h2 className="text-4xl font-medium mb-8">Let's talk</h2>
+            <AnimatedText/>
+            {/* <h2 className="text-4xl font-medium mb-8">Let's talk</h2> */}
             <h3 className="text-xl font-normal mb-8">
               I am currently looking for internships or full-time opportunities.
               Feel free to reach out if you want to just talk!
