@@ -11,12 +11,20 @@ import IndiaTime from "../../hooks/time"; // Adjust path as needed
 import { sendEmail } from "../../hooks/sendemail.ts"; // Adjust path as needed
 import { ColorThemeContext } from "../../providers"; // Import your context
 import Day from "../Elements/Day";
-import { FaXTwitter, FaInstagram } from "react-icons/fa6";
+import {
+  FaXTwitter,
+  FaInstagram,
+  FaMedium,
+  FaMapLocationDot,
+  FaAt,
+  FaUpRightFromSquare,
+  FaPhoneVolume
+} from "react-icons/fa6";
 import RandomizedTextEffect from "../../hooks/text-randomised";
 import AnimatedText from "../Elements/RiseUp";
 
 const currentYear = new Date().getFullYear();
-import '../../index.css'; // Assuming global styles include the font import
+import "../../index.css"; // Assuming global styles include the font import
 
 import BackToTopButton from "../Elements/BacktoTop";
 
@@ -27,7 +35,10 @@ const ContactDetails: React.FC = () => {
     <div
       className={`flex flex-col items-start space-y-4 px-4 ${theme === "dark" ? "text-white" : "text-black"}`}
     >
-      <h2 className="text-2xl font-medium">Contact Details</h2>
+      <div className="flex items-center space-x-2">
+    <h2 className="text-2xl font-medium">Contact Details</h2>
+    <FaPhoneVolume className="text-xl" />
+  </div>
       <ul className="w-full">
         <li className="flex items-center space-x-2">
           <a
@@ -58,7 +69,11 @@ const SocialLinks: React.FC = () => {
     <div
       className={`flex flex-col items-start space-y-4 p-4 ${theme === "dark" ? "text-white" : "text-black"}`}
     >
-      <h2 className="text-2xl font-medium">My Digital Spaces</h2>
+      <div className="flex items-center space-x-2">
+    <h2 className="text-2xl font-medium">My Digital Space</h2>
+    <FaUpRightFromSquare className="text-s" />
+  </div>
+
       <ul className="w-full">
         <li className="flex items-center space-x-2 mb-1">
           <FaGithub className="text-lg" />
@@ -104,6 +119,17 @@ const SocialLinks: React.FC = () => {
             Instagram
           </a>
         </li>
+        <li className="flex items-center space-x-2 mb-1">
+          <FaMedium className="text-lg" />
+          <a
+            href="https://github.com/ikrambil"
+            className="underline-hover-effect-alt !pb-0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Medium
+          </a>
+        </li>
       </ul>
     </div>
   );
@@ -136,7 +162,7 @@ const FooterForm: React.FC = () => {
   return (
     <form
       className={`flex flex-col space-y-8 ${theme === "dark" ? "text-white bg-black" : "text-black bg-[#f5f5f5]"} overflow-x-hidden`}
-      onSubmit={handleSubmit} 
+      onSubmit={handleSubmit}
     >
       <div className="flex">
         <input
@@ -164,11 +190,12 @@ const FooterForm: React.FC = () => {
         <button
           type="submit"
           className={`group flex items-center justify-center gap-2 ml-2 mb-2 h-[3rem] w-[8rem] 
-  ${theme === "dark" ? 
-    "bg-[#f5f5f5] text-black border-black hover:bg-black hover:text-[#f5f5f5] hover:border-white" : 
-    "bg-black text-white border-white hover:bg-[#f5f5f5] hover:text-black hover:border-black"} 
+  ${
+    theme === "dark"
+      ? "bg-[#f5f5f5] text-black border-black hover:bg-black hover:text-[#f5f5f5] hover:border-white"
+      : "bg-black text-white border-white hover:bg-[#f5f5f5] hover:text-black hover:border-black"
+  } 
   border-2 rounded-full outline-none transition-all focus:scale-110 hover:scale-110 active:scale-105 disabled:scale-100 disabled:bg-opacity-65`}
-
           disabled={pending}
         >
           {pending ? (
@@ -199,7 +226,7 @@ const FooterContent: React.FC<{ scrollProgress: any }> = ({
       >
         <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-10 overflow-x-hidden">
           <div className="md:col-span-2 flex flex-col gap-4">
-            <AnimatedText/>
+            <AnimatedText />
             {/* <h2 className="text-4xl font-medium mb-8">Let's talk</h2> */}
             <h3 className="text-xl font-normal mb-8">
               I am currently looking for internships or full-time opportunities.
@@ -210,8 +237,14 @@ const FooterContent: React.FC<{ scrollProgress: any }> = ({
           <div className="flex flex-col md:mx-auto justify-between">
             <ContactDetails />
             <SocialLinks />
-            <div className={`flex flex-col items-start space-y-4 p-4 ${theme === "dark" ? "text-white bg-black" : "text-black bg-[#f5f5f5]"}`}>
-              <h2 className="text-2xl font-medium">Locale</h2>
+            <div
+              className={`flex flex-col items-start space-y-4 p-4 ${theme === "dark" ? "text-white bg-black" : "text-black bg-[#f5f5f5]"}`}
+            >
+              <div className="flex items-center space-x-2">
+                <h2 className="text-2xl font-medium">Locale</h2>
+                <FaMapLocationDot className="text-2xl text-current" />
+              </div>
+
               <ul className="w-full">
                 <li className="flex items-center space-x-2">
                   <span>
@@ -231,21 +264,32 @@ const FooterContent: React.FC<{ scrollProgress: any }> = ({
           </div>
           <div className="col-span-1 md:col-span-3 flex flex-row justify-between items-center">
             <div className="flex flex-col sm:flex-row align-text-bottom">
-              <div className="flex flex-col sm:flex-row mr-1" style={{ fontFamily: "'Doto', serif" }}>
-                © {currentYear}
+              <div
+                className="flex flex-col sm:flex-row mr-1"
+                style={{ fontFamily: "'Doto', serif" }}
+              >
+                <div className="flex items-center space-x-2">
+                  <FaAt className="text-s text-current" />{" "}
+                  {/* Use `text-xs` for smaller size */}
+                  <span className="ml-1">{currentYear}</span>{" "}
+                  {/* Optional additional margin */}
+                </div>
                 <p
                   className="font-semibold ml-1"
                   id="contact"
                   style={{ fontFamily: "'Doto', serif" }}
-                >
-                </p>
-                <RandomizedTextEffect  className="font-semibold ml-1"
+                ></p>
+                <RandomizedTextEffect
+                  className="font-semibold ml-1"
                   id="contact"
-                  style={{ fontFamily: "'Doto', serif" }} text='VISHNUPPRIYAN PL' />
+                  style={{ fontFamily: "'Doto', serif" }}
+                  text="VISHNUPPRIYAN PL"
+                />
+                . All rights reserved.
               </div>
             </div>
-            <p style={{ fontFamily: "'Borel', italic" }}>Coded with 💔</p>
-            <BackToTopButton/>
+            <p style={{ fontFamily: "'Borel', italic" }}>Coded with ❤️</p>
+            <BackToTopButton />
           </div>
         </div>
       </div>

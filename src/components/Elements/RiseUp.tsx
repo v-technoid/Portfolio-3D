@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import SplitType from "split-type";
+import { FaLink } from "react-icons/fa6";
 
 const AnimatedText = () => {
   const textRef = useRef(null);
@@ -31,7 +32,7 @@ const AnimatedText = () => {
         ref={textRef}
         className="text-6xl font-medium mb-8 overflow-hidden"
       >
-        Let's Interface!
+       Sync Up! 💬
       </h2>
     </div>
   );
