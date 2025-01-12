@@ -7,7 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Environment files
+.env
+
+# Dependencies
 node_modules
+
+# Build outputs
 dist
 dist-ssr
 *.local
@@ -23,5 +29,6 @@ dist-ssr
 *.sln
 *.sw?
 
+# Vite configurations
 vite.config.ts.*.mfj
 vite.config.ts.*.mjs
