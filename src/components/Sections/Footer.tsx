@@ -20,7 +20,8 @@ import {
   FaAt,
   FaUpRightFromSquare,
   FaPhoneVolume,
-  FaDownload
+  FaDownload,
+  FaFileLines
 } from "react-icons/fa6";
 import RandomizedTextEffect from "../../hooks/text-randomised";
 import AnimatedText from "../Elements/RiseUp";
@@ -86,7 +87,7 @@ const SocialLinks: React.FC = () => {
 
       <ul className="w-full">
       <li className="flex items-center space-x-2 mb-1" onClick={playAudio}>
-          <FaDownload className="text-lg" />
+          <FaFileLines className="text-lg" />
           <a
             href="https://drive.google.com/file/d/1Kddf3r_AugP7_ZxZ3Fkjn-imK7UwzbbN/view?usp=sharing"
             className="underline-hover-effect-alt !pb-0"

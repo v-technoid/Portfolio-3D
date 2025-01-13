@@ -80,7 +80,13 @@ export function NavigationLinks_({ onClick, classNames }: NavigationLinksProps) 
         </HashLink>
       </li>
       <li className={classNames?.item}>
+      <a
+          href="../../../About me/VISHNUPPRIYAN PL.pdf" // Replace with the actual path to your resume
+          download="Vishnuppriyan PL Resume.pdf" // This will set the downloaded file's name
+          onClick={playClickSound} // Play sound when clicked
+        >
         <ButtonRotatingBackgroundGradient/>
+        </a>
       </li>
     </ul>
   );
