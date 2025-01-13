@@ -56,6 +56,7 @@ const config: Config = {
         arrowAnimation: "arrowAnimation 2s linear infinite",
         spinSlowly: "spin 20s linear infinite",
         hueRotate: "hueRotate 15s linear infinite",
+        gradient: "gradient 8s linear infinite",
       },
       keyframes: {
         "border-beam": {
@@ -89,6 +90,11 @@ const config: Config = {
           "0%": { opacity: 0, transform: "translateY(-7px) rotate(45deg)" },
           "40%, 60%": { opacity: 1 },
           "100%": { opacity: 0, transform: "translateY(3px) rotate(45deg)" },
+        },
+        gradient: {
+          to: {
+            backgroundPosition: "var(--bg-size) 0",
+          },
         },
         hueRotate: {
           "0%": { filter: "hue-rotate(0deg)" },

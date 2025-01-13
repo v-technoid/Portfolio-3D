@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { opacity, slideUp } from './anim';
 
-const words = ["Hello", "வணக்கம்","नमस्ते","ഹലോ","హలో","Bonjour", "やあ", "Guten tag", "Hallo"]
+const words = ["👋 Hello", "🙏 வணக்கம்","👋 नमस्ते","🙏 ഹലോ","👋 హలో","🙏 Bonjour", "👋 やあ", "🙏 Guten tag", "👋 Hallo"]
 
 export default function Preloader() {
     const [index, setIndex] = useState(0);

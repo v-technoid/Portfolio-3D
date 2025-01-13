@@ -11,6 +11,7 @@ import IndiaTime from "../../hooks/time"; // Adjust path as needed
 import { sendEmail } from "../../hooks/sendemail.ts"; // Adjust path as needed
 import { ColorThemeContext } from "../../providers"; // Import your context
 import Day from "../Elements/Day";
+import audioFile from '../../assets/images/spacebar-click-keyboard-199448.mp3';
 import {
   FaXTwitter,
   FaInstagram,
@@ -18,7 +19,8 @@ import {
   FaMapLocationDot,
   FaAt,
   FaUpRightFromSquare,
-  FaPhoneVolume
+  FaPhoneVolume,
+  FaDownload
 } from "react-icons/fa6";
 import RandomizedTextEffect from "../../hooks/text-randomised";
 import AnimatedText from "../Elements/RiseUp";
@@ -27,6 +29,14 @@ const currentYear = new Date().getFullYear();
 import "../../index.css"; // Assuming global styles include the font import
 
 import BackToTopButton from "../Elements/BacktoTop";
+
+const playAudio = () => {
+    console.log("Audio function triggered");
+    const audio = new Audio(audioFile);
+    audio.play().catch((error) => {
+      console.error("Audio playback failed:", error);
+    });
+  };
 
 // Contact Details Component
 const ContactDetails: React.FC = () => {
@@ -75,10 +85,21 @@ const SocialLinks: React.FC = () => {
   </div>
 
       <ul className="w-full">
-        <li className="flex items-center space-x-2 mb-1">
+      <li className="flex items-center space-x-2 mb-1" onClick={playAudio}>
+          <FaDownload className="text-lg" />
+          <a
+            href="https://drive.google.com/file/d/1Kddf3r_AugP7_ZxZ3Fkjn-imK7UwzbbN/view?usp=sharing"
+            className="underline-hover-effect-alt !pb-0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            My Resume
+          </a>
+        </li>
+        <li className="flex items-center space-x-2 mb-1" onClick={playAudio}>
           <FaGithub className="text-lg" />
           <a
-            href="https://github.com/ikrambil"
+            href="https://github.com/v-technoid"
             className="underline-hover-effect-alt !pb-0"
             target="_blank"
             rel="noopener noreferrer"
@@ -86,10 +107,10 @@ const SocialLinks: React.FC = () => {
             Github
           </a>
         </li>
-        <li className="flex items-center space-x-2 mb-1">
+        <li className="flex items-center space-x-2 mb-1" onClick={playAudio}>
           <FaLinkedinIn className="text-lg" />
           <a
-            href="https://www.linkedin.com/in/bilal-ikram/"
+            href="https://www.linkedin.com/in/vishnuppriyan/"
             className="underline-hover-effect-alt !pb-0"
             target="_blank"
             rel="noopener noreferrer"
@@ -97,10 +118,10 @@ const SocialLinks: React.FC = () => {
             LinkedIn
           </a>
         </li>
-        <li className="flex items-center space-x-2 mb-1">
+        <li className="flex items-center space-x-2 mb-1" onClick={playAudio}>
           <FaXTwitter className="text-lg" />
           <a
-            href="https://github.com/ikrambil"
+            href="https://x.com/vishnuppriyan_"
             className="underline-hover-effect-alt !pb-0"
             target="_blank"
             rel="noopener noreferrer"
@@ -108,10 +129,10 @@ const SocialLinks: React.FC = () => {
             Twitter
           </a>
         </li>
-        <li className="flex items-center space-x-2 mb-1">
+        <li className="flex items-center space-x-2 mb-1" onClick={playAudio}>
           <FaInstagram className="text-lg" />
           <a
-            href="https://github.com/ikrambil"
+            href="https://www.instagram.com/vishnuppriyan_"
             className="underline-hover-effect-alt !pb-0"
             target="_blank"
             rel="noopener noreferrer"
@@ -119,10 +140,10 @@ const SocialLinks: React.FC = () => {
             Instagram
           </a>
         </li>
-        <li className="flex items-center space-x-2 mb-1">
+        <li className="flex items-center space-x-2 mb-1" onClick={playAudio}>
           <FaMedium className="text-lg" />
           <a
-            href="https://github.com/ikrambil"
+            href="https://medium.com/@vishnuppriyan_"
             className="underline-hover-effect-alt !pb-0"
             target="_blank"
             rel="noopener noreferrer"

@@ -2,7 +2,7 @@ import { memo, MouseEventHandler } from "react";
 import { HashLink } from "react-router-hash-link";
 import deepEqual from "deep-equal";
 import clickSound from "../../assets/images/spacebar-click-keyboard-199448.mp3"; // Adjust the path to your sound file
-
+import ButtonRotatingBackgroundGradient from "./ButtonHover";
 type NavigationLinksProps = {
   onClick?: MouseEventHandler<HTMLAnchorElement>;
   classNames?: {
@@ -78,6 +78,9 @@ export function NavigationLinks_({ onClick, classNames }: NavigationLinksProps) 
         >
           Contact
         </HashLink>
+      </li>
+      <li className={classNames?.item}>
+        <ButtonRotatingBackgroundGradient/>
       </li>
     </ul>
   );

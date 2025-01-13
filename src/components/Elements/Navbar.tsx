@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
+import audioFile from '../../assets/images/spacebar-click-keyboard-199448.mp3';
 import { HashLink } from 'react-router-hash-link';
 import {
   Logo,
@@ -14,6 +15,14 @@ import {
   useOnClickOutside,
   useScrollDirection,
 } from '@/hooks';
+
+const playAudio = () => {
+  console.log("Audio function triggered");
+  const audio = new Audio(audioFile);
+  audio.play().catch((error) => {
+    console.error("Audio playback failed:", error);
+  });
+};
 
 export function Navbar() {
   const [isPreloadDone, setIsPreloadDone] = useState(false); // Add state to track preload
@@ -53,7 +62,7 @@ export function Navbar() {
       {isScreenMd ? (
         <div className="main-layout flex justify-between items-center py-6 text-lg uppercase font-semibold tracking-widest">
           <div className="grow">
-            <HashLink smooth to="/#top">
+            <HashLink smooth to="/#top" onClick={playAudio}>
               <Logo className="h-14 text-default transition-color duration-300 hover:text-main-8 dark:hover:text-main-reverse-3" />
             </HashLink>
           </div>
@@ -63,7 +72,7 @@ export function Navbar() {
               link: 'pb-1.5 center-to-sides-border',
             }}
           />
-          <div className="text-right grow">
+          <div className="text-right grow" onClick={playAudio}>
             <ThemeSwitchButton className="w-6 h-6" />
           </div>
         </div>
@@ -88,7 +97,7 @@ export function Navbar() {
             <div className="mt-auto w-full text-center">
               <ThemeSwitchButton className="h-8 w-8" />
               <div className="text-center my-6 font-light">
-                Website portfolio of
+                Website Portfolio of
                 <br />
                 <b className="font-bold">VISHNUPPRIYAN PL</b>
               </div>
