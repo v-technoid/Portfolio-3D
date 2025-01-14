@@ -4,7 +4,6 @@ const slugs = [
   "typescript",
   "javascript",
   "dart",
-  "java",
   "react",
   "flutter",
   "android",
@@ -14,7 +13,6 @@ const slugs = [
   "express",
   "nextdotjs",
   "prisma",
-  "amazonaws",
   "postgresql",
   "firebase",
   "nginx",
@@ -27,7 +25,6 @@ const slugs = [
   "jira",
   "github",
   "gitlab",
-  "visualstudiocode",
   "androidstudio",
   "sonarqube",
   "figma",
@@ -39,7 +36,7 @@ export default function IconCloudDemo() {
   );
 
   return (
-    <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-lg">
+    <div className="relative flex size-full max-w-xxl items-center justify-center overflow-hidden rounded-lg">
       <IconCloud images={images} />
     </div>
   );

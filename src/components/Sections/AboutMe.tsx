@@ -239,8 +239,8 @@ export const AboutSection = () => {
         <div>
           <div className="flex justify-center items-center">
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-              <p className="text-[3.5rem] font-bold">
-                My <span className="text-[#8678f9]">Approach</span>
+              <p className="text-[3.5rem] font-bold"  style={{ fontFamily: "'Londrina Solid', serif" }}>
+                MY <span className="inline-flex animate-text-gradient bg-gradient-to-r from-[#b2a8fd] via-[#20BFD1FF] to-[#D37DE9FF] bg-[200%_auto] bg-clip-text text-4xl md:text-6xl xs:text-7xl font-extrabold text-transparent">APPROACH</span>
               </p>
             </BoxReveal>
           </div>

@@ -1,6 +1,6 @@
-import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 
 const mainColors = [
   "#f5f5f5",
@@ -19,7 +19,19 @@ const mainColors = [
   "#040404",
 ].reverse();
 
-const config: Config = {
+function addVariablesForColors({ addBase, theme }: any) {
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
+
+/** @type {import('tailwindcss').Config} */
+const config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
@@ -58,22 +70,22 @@ const config: Config = {
         hueRotate: "hueRotate 15s linear infinite",
         gradient: "gradient 8s linear infinite",
         "line-shadow": "line-shadow 15s linear infinite",
-        "text-gradient": "text-gradient 1.5s linear infinite"
+        "text-gradient": "text-gradient 1.5s linear infinite",
       },
       keyframes: {
         "text-gradient": {
-      "to": {
-        "backgroundPosition": "200% center"
-      },
-    },
+          to: {
+            backgroundPosition: "200% center",
+          },
+        },
         "border-beam": {
           "100%": {
-            "offset-distance": "100%",
+            offsetDistance: "100%",
           },
         },
         "line-shadow": {
-          "0%": { "background-position": "0 0" },
-          "100%": { "background-position": "100% -100%" },
+          "0%": { backgroundPosition: "0 0" },
+          "100%": { backgroundPosition: "100% -100%" },
         },
         meteor: {
           "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
@@ -137,7 +149,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
 };
 
 export default config;
