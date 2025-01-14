@@ -11,7 +11,7 @@ import IndiaTime from "../../hooks/time"; // Adjust path as needed
 import { sendEmail } from "../../hooks/sendemail.ts"; // Adjust path as needed
 import { ColorThemeContext } from "../../providers"; // Import your context
 import Day from "../Elements/Day";
-import audioFile from '../../assets/images/spacebar-click-keyboard-199448.mp3';
+import audioFile from "../../assets/images/spacebar-click-keyboard-199448.mp3";
 import {
   FaXTwitter,
   FaInstagram,
@@ -21,7 +21,8 @@ import {
   FaUpRightFromSquare,
   FaPhoneVolume,
   FaDownload,
-  FaFileLines
+  FaFileLines,
+  FaCode,
 } from "react-icons/fa6";
 import RandomizedTextEffect from "../../hooks/text-randomised";
 import AnimatedText from "../Elements/RiseUp";
@@ -32,12 +33,12 @@ import "../../index.css"; // Assuming global styles include the font import
 import BackToTopButton from "../Elements/BacktoTop";
 
 const playAudio = () => {
-    console.log("Audio function triggered");
-    const audio = new Audio(audioFile);
-    audio.play().catch((error) => {
-      console.error("Audio playback failed:", error);
-    });
-  };
+  console.log("Audio function triggered");
+  const audio = new Audio(audioFile);
+  audio.play().catch((error) => {
+    console.error("Audio playback failed:", error);
+  });
+};
 
 // Contact Details Component
 const ContactDetails: React.FC = () => {
@@ -47,9 +48,9 @@ const ContactDetails: React.FC = () => {
       className={`flex flex-col items-start space-y-4 px-4 ${theme === "dark" ? "text-white" : "text-black"}`}
     >
       <div className="flex items-center space-x-2">
-    <h2 className="text-2xl font-medium">Contact Details</h2>
-    <FaPhoneVolume className="text-xl" />
-  </div>
+        <h2 className="text-2xl font-medium">Contact Details</h2>
+        <FaPhoneVolume className="text-xl" />
+      </div>
       <ul className="w-full">
         <li className="flex items-center space-x-2">
           <a
@@ -78,19 +79,19 @@ const SocialLinks: React.FC = () => {
 
   return (
     <div
-      className={`flex flex-col items-start space-y-4 p-4 ${theme === "dark" ? "text-white" : "text-black"}`}
+      className={`flex flex-col items-start space-y-3 p-3 ${theme === "dark" ? "text-white" : "text-black"}`}
     >
       <div className="flex items-center space-x-2">
-    <h2 className="text-2xl font-medium">My Digital Space</h2>
-    <FaUpRightFromSquare className="text-s" />
-  </div>
+        <h2 className="text-2xl font-medium">My Digital Space</h2>
+        <FaUpRightFromSquare className="text-s" />
+      </div>
 
-      <ul className="w-full">
-      <li className="flex items-center space-x-2 mb-1" onClick={playAudio}>
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+        <li className="flex items-center space-x-2" onClick={playAudio}>
           <FaFileLines className="text-lg" />
           <a
             href="https://drive.google.com/file/d/1Kddf3r_AugP7_ZxZ3Fkjn-imK7UwzbbN/view?usp=sharing"
-            className="underline-hover-effect-alt !pb-0"
+            className="relative after:absolute after:w-0 after:h-[2px] after:bg-current after:bottom-0 after:left-1/2 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 underline-hover-effect-alt !pb-0"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -101,7 +102,7 @@ const SocialLinks: React.FC = () => {
           <FaGithub className="text-lg" />
           <a
             href="https://github.com/v-technoid"
-            className="underline-hover-effect-alt !pb-0"
+            className="relative after:absolute after:w-0 after:h-[2px] after:bg-current after:bottom-0 after:left-1/2 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 underline-hover-effect-alt !pb-0"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -112,7 +113,7 @@ const SocialLinks: React.FC = () => {
           <FaLinkedinIn className="text-lg" />
           <a
             href="https://www.linkedin.com/in/vishnuppriyan/"
-            className="underline-hover-effect-alt !pb-0"
+            className="relative after:absolute after:w-0 after:h-[2px] after:bg-current after:bottom-0 after:left-1/2 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 underline-hover-effect-alt !pb-0"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -123,7 +124,7 @@ const SocialLinks: React.FC = () => {
           <FaXTwitter className="text-lg" />
           <a
             href="https://x.com/vishnuppriyan_"
-            className="underline-hover-effect-alt !pb-0"
+            className="relative after:absolute after:w-0 after:h-[2px] after:bg-current after:bottom-0 after:left-1/2 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 underline-hover-effect-alt !pb-0"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -134,7 +135,7 @@ const SocialLinks: React.FC = () => {
           <FaInstagram className="text-lg" />
           <a
             href="https://www.instagram.com/vishnuppriyan_"
-            className="underline-hover-effect-alt !pb-0"
+            className="relative after:absolute after:w-0 after:h-[2px] after:bg-current after:bottom-0 after:left-1/2 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 underline-hover-effect-alt !pb-0"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -145,11 +146,60 @@ const SocialLinks: React.FC = () => {
           <FaMedium className="text-lg" />
           <a
             href="https://medium.com/@vishnuppriyan_"
-            className="underline-hover-effect-alt !pb-0"
+            className="relative after:absolute after:w-0 after:h-[2px] after:bg-current after:bottom-0 after:left-1/2 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 underline-hover-effect-alt !pb-0"
             target="_blank"
             rel="noopener noreferrer"
           >
             Medium
+          </a>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+const CodingLinks: React.FC = () => {
+  const [theme] = useContext(ColorThemeContext);
+
+  return (
+    <div
+      className={`flex flex-col items-start space-y-4 p-4 ${theme === "dark" ? "text-white" : "text-black"}`}
+    >
+      <div className="flex items-center space-x-2">
+        <h2 className="text-2xl font-medium">My Coding Profiles</h2>
+        <FaCode className="text-s" />
+      </div>
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+        <li className="flex items-center space-x-2" onClick={playAudio}>
+          <img
+            align="center"
+            src="https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/codechef.svg"
+            alt="vishnuppriyan"
+            height="20"
+            width="20"
+          />
+          <a
+            href="https://www.codechef.com/users/vishnuppriyan"
+            target="_blank"
+            className="relative after:absolute after:w-0 after:h-[2px] after:bg-current after:bottom-0 after:left-1/2 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 flex items-center space-x-2"
+          >
+            <span>CodeChef</span>
+          </a>
+        </li>
+        <li className="flex items-center space-x-2 mb-1" onClick={playAudio}>
+          <img
+            align="center"
+            src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/geeks-for-geeks.svg"
+            alt="vishnuppriyan_"
+            height="20"
+            width="20"
+          />
+          <a
+            href="https://auth.geeksforgeeks.org/user/vishnuppriyan_"
+            target="blank"
+            className="relative after:absolute after:w-0 after:h-[2px] after:bg-current after:bottom-0 after:left-1/2 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 flex items-center space-x-2"
+          >
+            <span>GeeksforGeeks</span>
           </a>
         </li>
       </ul>
@@ -259,8 +309,9 @@ const FooterContent: React.FC<{ scrollProgress: any }> = ({
           <div className="flex flex-col md:mx-auto justify-between">
             <ContactDetails />
             <SocialLinks />
+            <CodingLinks />
             <div
-              className={`flex flex-col items-start space-y-4 p-4 ${theme === "dark" ? "text-white bg-black" : "text-black bg-[#f5f5f5]"}`}
+              className={`flex flex-col items-start space-y-2 p-2 ${theme === "dark" ? "text-white bg-black" : "text-black bg-[#f5f5f5]"}`}
             >
               <div className="flex items-center space-x-2">
                 <h2 className="text-2xl font-medium">Locale</h2>

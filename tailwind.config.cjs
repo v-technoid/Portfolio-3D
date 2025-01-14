@@ -57,12 +57,23 @@ const config: Config = {
         spinSlowly: "spin 20s linear infinite",
         hueRotate: "hueRotate 15s linear infinite",
         gradient: "gradient 8s linear infinite",
+        "line-shadow": "line-shadow 15s linear infinite",
+        "text-gradient": "text-gradient 1.5s linear infinite"
       },
       keyframes: {
+        "text-gradient": {
+      "to": {
+        "backgroundPosition": "200% center"
+      },
+    },
         "border-beam": {
           "100%": {
             "offset-distance": "100%",
           },
+        },
+        "line-shadow": {
+          "0%": { "background-position": "0 0" },
+          "100%": { "background-position": "100% -100%" },
         },
         meteor: {
           "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },

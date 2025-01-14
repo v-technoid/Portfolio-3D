@@ -1,13 +1,14 @@
 import { HashLink } from "react-router-hash-link";
 import { Suspense } from "react";
 ("use client");
+import React, { useEffect, useRef, useState, useContext } from "react";
 import { SectionHeader } from "../Elements/SectionHeader";
 import { Card } from "../Elements/Card";
 import { CardHeader } from "../Elements/CardHeader";
 import { ToolboxItems } from "../Elements/ToolboxItems";
 import { motion } from "framer-motion";
-import { useRef } from "react";
 import { AboutMeCanvas, Loader } from "@/components";
+import { ColorThemeContext } from "../../providers";
 import "/Users/vishnuppriyanpl/Desktop/Portfolio Project/Portfolio/src/index.css";
 import { RevealLinks } from "../Elements/RevealLinks";
 import bookcover from "../../assets/images/bookcover.png";
@@ -23,7 +24,8 @@ import GridGlobe from "../Elements/GridGlobe";
 import BackgroundLinesDemo from "../Elements/AboutContent";
 import AnimatedText from "../Elements/TextReveal";
 import TextGenerateEffectDemo from "../Elements/Text-Generate";
-
+import CanvasRevealEffectDemo from "../Elements/canvasrevealeffect";
+import BoxReveal from "../Elements/LineShadow";
 const toolboxItems = [
   { title: "Next.js", iconType: Nextjs },
   { title: "TypeScript", iconType: Type },
@@ -233,6 +235,16 @@ export const AboutSection = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div>
+          <div className="flex justify-center items-center">
+          <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+              <p className="text-[3.5rem] font-bold">
+                My <span className="text-[#8678f9]">Approach</span>
+              </p>
+            </BoxReveal>
+          </div>
+          <CanvasRevealEffectDemo />
         </div>
       </section>
     </>

@@ -14,7 +14,7 @@ const ButtonRotatingBackgroundGradient = () => {
             Download Resume
           </span>
         </AnimatedGradientText>
-      <style jsx>{`
+      <style jsx="true">{`
         @keyframes shimmer {
           0% {
             background-position: -200%;
