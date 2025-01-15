@@ -1,9 +1,13 @@
+"use client";
 import clsx from "clsx";
 import { useState } from "react";
 import { Icon, IconType } from "@/components";
 import { objectEntriesTyped, objectKeysTyped } from "@/utility";
 import IconCloudDemo from "../Elements/IconDemo";
 import Tech from "../Elements/Tech";
+import FlickeringGrid from "../../utility/flickering";
+import { cn } from "../../utility/animaback";
+import { InteractiveGridPattern } from "../../utility/interactivepattern";
 
 // const skillCategories = {
 //   primary: {
@@ -65,11 +69,43 @@ export function Skills() {
       id="skills"
       className="relative text-lg px-8 xs:px-10 sm:px-12 xs:py-12 py-16 mt-24 mb-20 transition-colors duration-300 bg-main-reverse-1 dark:bg-main-1 text-default"
     >
-        <div className="max-w-8xl mx-auto flex flex-col md:flex-row gap-8 md:gap-16 w-full">
-          <h2 className="inline-flex animate-text-gradient bg-gradient-to-r from-[#b2a8fd] via-[#8678f9] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-4xl md:text-6xl lg:text-7xl font-extrabold text-transparent">
-            MY SKILLS
-          </h2>
-          {/* <ul className="md:basis-[calc(50%_-_32px)] md:shrink-0 flex flex-col gap-y-2 h-64 md:h-80 lg:h-64">
+      {/* <div className="relative h-[500px] rounded-lg w-full bg-background overflow-hidden border">
+      <FlickeringGrid
+        className="z-0 absolute inset-0 size-full"
+        squareSize={4}
+        gridGap={6}
+        color="#6B7280"
+        maxOpacity={0.5}
+        flickerChance={0.1}
+        height={5000}
+        width={5000}
+      />
+    </div> */}
+      {/* <div className="absolute inset-0 -z-0 overflow-hidden">
+        <FlickeringGrid
+          className="z--1 absolute inset-0 size-full"
+          squareSize={4}
+          gridGap={6}
+          color="#6B7280"
+          maxOpacity={0.5}
+          flickerChance={0.1}
+          height={5000}
+          width={5000}
+        />
+      </div> */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <InteractiveGridPattern
+          className={cn(
+            "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
+            "w-full h-full skew-y-0"
+          )}
+        />
+      </div>
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-col gap-8 md:gap-8 w-full justify-center items-center z-2">
+        <h2 className="inline-flex animate-text-gradient bg-gradient-to-r from-[#b2a8fd] via-[#8678f9] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-4xl md:text-6xl lg:text-7xl font-extrabold text-transparent">
+          MY SKILLS
+        </h2>
+        {/* <ul className="md:basis-[calc(50%_-_32px)] md:shrink-0 flex flex-col gap-y-2 h-64 md:h-80 lg:h-64">
             <li>
             <IconCloudDemo />
             </li>
@@ -135,12 +171,12 @@ export function Skills() {
               </ul>
             )}
           </div> */}
-          <Tech/>
-          {/* <Icon
+        <Tech />
+        {/* <Icon
             type={skillCategories[currentTab].icon}
             className="absolute right-0 top-0 h-full text-accent-600 dark:text-accent-300 opacity-[12%] transition-colors duration-300"
-          /> */}
-        {/* </div> */}
+          />
+        </div> */}
       </div>
     </section>
   );

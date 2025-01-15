@@ -28,7 +28,7 @@ export const BoxReveal = ({
     if (isInView) {
       const timer = setTimeout(() => {
         setIsDelayed(true); // Trigger delay after 5 seconds
-      }, 5000); // 5 seconds delay
+      }, 3000); // 5 seconds delay
 
       return () => clearTimeout(timer); // Cleanup on component unmount
     }
