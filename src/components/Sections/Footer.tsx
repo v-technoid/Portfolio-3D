@@ -12,6 +12,7 @@ import IndiaTime from "../../hooks/time"; // Adjust path as needed
 import { ColorThemeContext } from "../../providers"; // Import your context
 import Day from "../Elements/Day";
 import audioFile from "../../assets/images/spacebar-click-keyboard-199448.mp3";
+import codechef from "../../assets/images/pngaaa.com-6179134.png";
 import {
   FaXTwitter,
   FaInstagram,
@@ -173,7 +174,7 @@ const CodingLinks: React.FC = () => {
         <li className="flex items-center space-x-2" onClick={playAudio}>
           <img
             align="center"
-            src="https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/codechef.svg"
+            src={codechef}
             alt="vishnuppriyan"
             height="20"
             width="20"
