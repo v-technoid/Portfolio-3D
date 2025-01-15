@@ -1,4 +1,5 @@
 import { Icon } from '@/components';
+import { FaMedium } from "react-icons/fa6"; 
 
 type ContactLinksProps = {
   classNames?: {
@@ -32,14 +33,15 @@ export function ContactLinks({ classNames }: ContactLinksProps) {
         </a>
       </li>
       <li className={classNames?.item}>
-        <a
-          target="_blank"
-          href="https://discord.com/users/292300959265062922"
-          className={classNames?.link}
-        >
-          <Icon type="discord" className={classNames?.icon} />
-        </a>
-      </li>
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://medium.com/@vishnuppriyan_" // Replace with your Medium profile link
+    className={classNames?.link}
+  >
+    <FaMedium className={`${classNames?.icon} text-3xl`} style={{ position: "relative", top: "4px" }} /> {/* Use Medium icon here */}
+  </a>
+</li>
     </ul>
   );
 }

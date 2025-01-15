@@ -430,7 +430,7 @@ const Footer: React.FC = () => {
   });
 
   return (
-    <div ref={container}>
+    <div ref={container} id="#contact">
       <FooterContent scrollProgress={scrollYProgress} />
     </div>
   );
