@@ -102,7 +102,7 @@ export function Skills() {
         />
       </div>
       <div className="max-w-4xl mx-auto flex flex-col md:flex-col gap-8 md:gap-8 w-full justify-center items-center z-2">
-        <h2 className="inline-flex animate-text-gradient bg-gradient-to-r from-[#b2a8fd] via-[#8678f9] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-4xl md:text-6xl lg:text-7xl font-extrabold text-transparent">
+        <h2 className="inline-flex animate-text-gradient bg-gradient-to-r from-[#484848FF] via-[#464647FF] to-[#c7d2fe] bg-[50%_auto] bg-clip-text text-4xl md:text-6xl lg:text-7xl font-extrabold text-transparent" style={{ fontFamily: "'Press Start 2P', serif" }}>
           MY SKILLS
         </h2>
         {/* <ul className="md:basis-[calc(50%_-_32px)] md:shrink-0 flex flex-col gap-y-2 h-64 md:h-80 lg:h-64">
