@@ -36,9 +36,8 @@ export function Landing() {
       <Hero />
       <TapeSection />
       <AboutSection />
-      <Skills />
       {/* <Projects /> */}
-      {/* <Contact /> */}
+      <Skills />
       <Footer />
     </main>
   );

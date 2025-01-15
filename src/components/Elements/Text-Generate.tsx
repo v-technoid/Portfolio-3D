@@ -14,7 +14,7 @@ I am currently honing my knowledge in cloud computing and AI while contributing 
 
 export default function TextGenerateEffectDemo() {
   return (
-    <div className="max-w-4xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-justify font-normal">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-justify font-normal">
       <TextGenerateEffect words={words} />
     </div>
   );

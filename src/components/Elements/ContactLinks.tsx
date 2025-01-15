@@ -13,19 +13,19 @@ export function ContactLinks({ classNames }: ContactLinksProps) {
   return (
     <ul className={classNames?.list}>
       <li className={classNames?.item}>
-        <a target="_blank" href="mailto:cherkirr@gmail.com" className={classNames?.link}>
+        <a target="_blank" href="mailto:vishnutechnophile@gmail.com" className={classNames?.link}>
           <Icon type="mail" className={classNames?.icon} />
         </a>
       </li>
       <li className={classNames?.item}>
-        <a target="_blank" href="https://github.com/Kirill-Cherepanov" className={classNames?.link}>
+        <a target="_blank" href="https://github.com/v-technoid" className={classNames?.link}>
           <Icon type="github" className={classNames?.icon} />
         </a>
       </li>
       <li className={classNames?.item}>
         <a
           target="_blank"
-          href="https://www.linkedin.com/in/kirill-cherepanov/"
+          href="https://www.linkedin.com/in/vishnuppriyan/"
           className={classNames?.link}
         >
           <Icon type="linkedin" className={classNames?.icon} />
