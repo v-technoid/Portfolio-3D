@@ -32,7 +32,7 @@ const AnimatedText = () => {
         ref={textRef}
         className="text-6xl font-medium mb-8 overflow-hidden"
       >
-       Sync Up! 💬
+       Let's Create! 💬
       </h2>
     </div>
   );
