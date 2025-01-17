@@ -63,7 +63,7 @@ const ContactDetails: React.FC = () => {
         </li>
         <li className="flex items-center space-x-2">
           <a
-            href="mailto:bilal.ikr@outlook.com?subject=Hello%20there&body=Hi%2C%20I%20have%20a%20question%20about..."
+            href="mailto:vishnutechnophile@gmail.com?subject=Hello%20there&body=Hi%2C%20I%20have%20a%20question%20about..."
             className="underline-hover-effect-alt !pb-0"
           >
             vishnutechnophile@gmail.com
@@ -210,128 +210,128 @@ const CodingLinks: React.FC = () => {
 
 // Footer Form Component
 const FooterForm: React.FC = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const [pending, setPending] = useState(false);
-    const [theme] = useContext(ColorThemeContext);
-  
-    const isValidEmail = (email: string) => {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(email);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [pending, setPending] = useState(false);
+  const [theme] = useContext(ColorThemeContext);
+
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!isValidEmail(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    if (!name || !message) {
+      toast.error("Please fill out all the fields.");
+      return;
+    }
+
+    setPending(true);
+
+    const serviceId = "service_1o7g70h";
+    const templateId = "template_d5mpuc2";
+    const publicKey = "ZiHmw1FLgbQozPnq2";
+
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      to_name: "Vishnuppriyan",
+      message: message,
     };
-  
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-  
-      if (!isValidEmail(email)) {
-        toast.error("Please enter a valid email address.");
-        return;
-      }
-  
-      if (!name || !message) {
-        toast.error("Please fill out all the fields.");
-        return;
-      }
-  
-      setPending(true);
-  
-      const serviceId = "service_1o7g70h";
-      const templateId = "template_d5mpuc2";
-      const publicKey = "ZiHmw1FLgbQozPnq2";
-  
-      const templateParams = {
-        from_name: name,
-        from_email: email,
-        to_name: "Vishnuppriyan",
-        message: message,
-      };
-  
-      emailjs
-        .send(serviceId, templateId, templateParams, publicKey)
-        .then((response) => {
-          toast.success("Email sent successfully!");
-          setName('');
-          setEmail('');
-          setMessage('');
-        })
-        .catch((error) => {
-          toast.error("Failed to send email. Please try again.");
-        })
-        .finally(() => setPending(false));
-    };
-  
-    return (
-      <form
-        onSubmit={handleSubmit}
-        className={`flex flex-col space-y-8 ${
-          theme === "dark" ? "text-white bg-black" : "text-black bg-[#f5f5f5]"
-        } overflow-x-hidden`}
-      >
-        <div className="flex">
-          <input
-            type="text"
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className={`input w-1/2 mr-4 p-3 border-2 ${
-              theme === "dark"
-                ? "border-[#f5f5f5] bg-black text-[#f5f5f5] placeholder-[#f5f5f5]"
-                : "border-black bg-[#f5f5f5] text-black placeholder-black"
-            } rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5f5f5]`}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className={`input w-1/2 ml-2 p-3 border-2 ${
-              theme === "dark"
-                ? "border-[#f5f5f5] bg-black text-[#f5f5f5] placeholder-[#f5f5f5]"
-                : "border-black bg-[#f5f5f5] text-black placeholder-black"
-            } rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5f5f5]`}
-            required
-          />
-        </div>
-        <textarea
-          cols="30"
-          rows="10"
-          placeholder="Your Message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          className={`input p-3 border-2 ${
+
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        toast.success("Email sent successfully!");
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((error) => {
+        toast.error("Failed to send email. Please try again.");
+      })
+      .finally(() => setPending(false));
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className={`flex flex-col space-y-8 ${
+        theme === "dark" ? "text-white bg-black" : "text-black bg-[#f5f5f5]"
+      } overflow-x-hidden`}
+    >
+      <div className="flex">
+        <input
+          type="text"
+          placeholder="Your Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className={`input w-1/2 mr-4 p-3 border-2 ${
             theme === "dark"
               ? "border-[#f5f5f5] bg-black text-[#f5f5f5] placeholder-[#f5f5f5]"
               : "border-black bg-[#f5f5f5] text-black placeholder-black"
-          } h-28 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5f5f5]`}
+          } rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5f5f5]`}
           required
         />
-        <div>
-          <button
-            type="submit"
-            className={`group flex items-center justify-center gap-2 ml-2 mb-2 h-[3rem] w-[8rem] 
+        <input
+          type="email"
+          placeholder="Your Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className={`input w-1/2 ml-2 p-3 border-2 ${
+            theme === "dark"
+              ? "border-[#f5f5f5] bg-black text-[#f5f5f5] placeholder-[#f5f5f5]"
+              : "border-black bg-[#f5f5f5] text-black placeholder-black"
+          } rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5f5f5]`}
+          required
+        />
+      </div>
+      <textarea
+        cols="30"
+        rows="10"
+        placeholder="Your Message"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        className={`input p-3 border-2 ${
+          theme === "dark"
+            ? "border-[#f5f5f5] bg-black text-[#f5f5f5] placeholder-[#f5f5f5]"
+            : "border-black bg-[#f5f5f5] text-black placeholder-black"
+        } h-28 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5f5f5]`}
+        required
+      />
+      <div>
+        <button
+          type="submit"
+          className={`group flex items-center justify-center gap-2 ml-2 mb-2 h-[3rem] w-[8rem] 
               ${
                 theme === "dark"
                   ? "bg-[#f5f5f5] text-black border-black hover:bg-black hover:text-[#f5f5f5] hover:border-white"
                   : "bg-black text-white border-white hover:bg-[#f5f5f5] hover:text-black hover:border-black"
               } 
               border-2 rounded-full outline-none transition-all focus:scale-110 hover:scale-110 active:scale-105 disabled:scale-100 disabled:bg-opacity-65`}
-            disabled={pending}
-          >
-            {pending ? (
-              <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
-            ) : (
-              <>
-                Submit{" "}
-                <FaPaperPlane className="text-xs opacity-100 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </>
-            )}
-          </button>
-        </div>
-      </form>
-    );
-  };
+          disabled={pending}
+        >
+          {pending ? (
+            <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+          ) : (
+            <>
+              Submit{" "}
+              <FaPaperPlane className="text-xs opacity-100 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </>
+          )}
+        </button>
+      </div>
+    </form>
+  );
+};
 
 // Footer Content Component
 const FooterContent: React.FC<{ scrollProgress: any }> = ({
@@ -430,7 +430,7 @@ const Footer: React.FC = () => {
   });
 
   return (
-    <div ref={container} id="#contact">
+    <div ref={container} id="contact">
       <FooterContent scrollProgress={scrollYProgress} />
     </div>
   );

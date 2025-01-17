@@ -10,6 +10,8 @@ import { useEffect, useState } from 'react'
 import Preloader from '../Preloader/Preloader';
 import { AnimatePresence } from 'framer-motion';
 import { default as Footer } from '../components/Sections/Footer'; 
+import VelocityText from '../components/Elements/VelocityText';
+
 
 export function Landing() {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,7 +38,8 @@ export function Landing() {
       <Hero />
       <TapeSection />
       <AboutSection />
-      {/* <Projects /> */}
+      <VelocityText/>
+      <Projects />
       <Skills />
       <Footer />
     </main>

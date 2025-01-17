@@ -5,7 +5,6 @@ import { Suspense } from 'react';
 
 import { Icon, ScrollDownTextCircle, HeroCanvas, Spinner } from '@/components';
 import Preloader from '../../Preloader/Preloader';
-import diamond from '@/assets/images/diamond.png';
 
 export function Hero() {
   return (
