@@ -146,7 +146,7 @@ export const AboutSection = () => {
           <div className="flex justify-center items-center">
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
               <p className="text-[3.7rem] font-bold"  style={{ fontFamily: "'Anton SC', serif" }}>
-                MY <span className="inline-flex animate-text-gradient bg-gradient-to-r from-[#6CC4FFFF] via-[#379BA8FF] to-[#64D7CAFF] bg-[20%_auto] bg-clip-text text-4xl md:text-6xl xs:text-7xl font-extrabold text-transparent">APPROACH</span>
+                MY <span className="inline-flex animate-text-gradient bg-gradient-to-r from-[#6CC4FFFF] via-[#379BA8FF] to-[#64D7CAFF] bg-[75%_auto] bg-clip-text text-4xl md:text-6xl xs:text-7xl font-extrabold text-transparent">APPROACH</span>
               </p>
             </BoxReveal>
           </div>

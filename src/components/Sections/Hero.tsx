@@ -1,19 +1,24 @@
-import { HashLink } from 'react-router-hash-link';
-import Marquee from 'react-fast-marquee';
-import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
+import { HashLink } from "react-router-hash-link";
+import Marquee from "react-fast-marquee";
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import { useRef } from 'react';
+import Home from "../../utility/textparallax.jsx";
 
-import { Icon, ScrollDownTextCircle, HeroCanvas, Spinner } from '@/components';
-import Preloader from '../../Preloader/Preloader';
+import { Icon, ScrollDownTextCircle, HeroCanvas, Spinner } from "@/components";
+import Preloader from "../../Preloader/Preloader";
 
 export function Hero() {
+  const firstText = useRef(null);
+
+  const secondText = useRef(null);
   return (
     <section>
       <div className="mt-24 sm:mt-0 h-[400px] md:h-screen relative">
         <Suspense
           fallback={
             <div className="mt-24 sm:mt-0 h-[400px] md:h-screen w-screen flex justify-center items-center">
-             <Spinner />
+              <Spinner />
             </div>
           }
         >
@@ -41,8 +46,7 @@ export function Hero() {
       </div>
       <div className="main-layout mt-8 sm:mt-24" id="hero-about">
         <h2 className="text-4xl 2xs:text-5xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 font-righteous relative font-bold">
-          Engineer | <br className="sm:hidden" /> Designer{' '}
-          <br></br>
+          Engineer | <br className="sm:hidden" /> Designer <br></br>
           {/* <img
             src={diamond}
             alt=""
@@ -57,17 +61,17 @@ export function Hero() {
           /> */}
         </h2>
         <p className="text-xl xs:text-2xl md:w-7/12 font-semibold">
-        Crafting Scalable Solutions | Building Seamless Experiences.
+          Crafting Scalable Solutions | Building Seamless Experiences.
         </p>
       </div>
-      <Marquee
+      {/* <Marquee
         gradient={false}
         className="text-7xl xs:text-8xl sm:text-[112px] md:text-9xl lg:text-[160px] xl:text-[208px] 2xl:text-[256px]  tracking-tight font-righteous text-stroke text-transparent overflow-hidden mt-8 lg:mt-16 mb-20"
         speed={100}
       >
-        {/* It works, so it's alright */}
         Code. Create. Innovate. Repeat.{'ㅤ·ㅤ'}Code. Create. Innovate. Repeat.{'ㅤ·ㅤ'}
-      </Marquee>
+      </Marquee> */}
+      <Home/>
     </section>
   );
 }

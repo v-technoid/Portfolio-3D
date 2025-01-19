@@ -12,6 +12,9 @@ import { AnimatePresence } from 'framer-motion';
 import { default as Footer } from '../components/Sections/Footer'; 
 import VelocityText from '../components/Elements/VelocityText';
 
+import SmoothScrollHero from "../components/Elements/SmoothScroll";
+import  Home from "../components/Parallax/page";
+
 
 export function Landing() {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,6 +44,8 @@ export function Landing() {
       <VelocityText/>
       <Projects />
       <Skills />
+      {/* <SmoothScrollHero/> */}
+      <Home/>
       <Footer />
     </main>
   );

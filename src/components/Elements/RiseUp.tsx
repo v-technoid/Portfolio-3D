@@ -33,7 +33,7 @@ const AnimatedText = () => {
         className="text-6xl font-medium mb-8 overflow-hidden"
         style={{ fontFamily: "'Doto', serif" }}
       >
-       Let's Create!💬
+       Let's Create!👾
       </h2>
     </div>
   );
