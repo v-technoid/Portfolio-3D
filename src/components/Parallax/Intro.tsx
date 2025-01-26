@@ -1,5 +1,5 @@
 import React from 'react'
-import Background from '../../assets/images/BWPROFILE.png';
+import Background from '../../assets/images/ME.png';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -14,7 +14,7 @@ export default function Intro() {
   
     return (
       <div className='h-screen overflow-hidden z-100'>
-        <motion.div style={{y}} className='relative h-full opacity-70'>
+        <motion.div style={{y}} className='relative h-full opacity-50'>
           <img src={Background} fill alt="image" style={{objectFit: "cover"}}/>
         </motion.div>
       </div>
