@@ -22,7 +22,7 @@ export default function Section() {
         </div>
         <div className='fixed top-[-10vh] left-0 h-[120vh] w-full'>
             <motion.div style={{y}} className='relative w-full h-full'>
-            <img src={Background} fill alt="image" style={{objectFit: "cover"}}/>
+            <img src={Background} alt="image" style={{objectFit: "cover"}}/>
             </motion.div>
         </div>
         </div>

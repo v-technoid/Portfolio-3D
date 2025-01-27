@@ -15,7 +15,7 @@ export default function Intro() {
     return (
       <div className='h-screen overflow-hidden z-100'>
         <motion.div style={{y}} className='relative h-full opacity-50'>
-          <img src={Background} fill alt="image" style={{objectFit: "cover"}}/>
+          <img src={Background} alt="image" style={{objectFit: "cover"}}/>
         </motion.div>
       </div>
     )
