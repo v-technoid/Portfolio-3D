@@ -12,8 +12,6 @@ const IMGS = [
   "https://www.viraacare.com/cdn/shop/files/ViraaCareOnlineConsultation.png?v=1729985084&width=800",
   "https://findlogovector.com/wp-content/uploads/2022/05/vellore-institute-of-technology-vit-logo-vector-2022.png",
   "https://media.licdn.com/dms/image/v2/D560BAQGf2gYciUhc9Q/company-logo_200_200/company-logo_200_200/0/1719512015205/developing_bee_logo?e=2147483647&v=beta&t=rQmJRuLDVDnvygM6IsTXvIL7_vB1UiqHEwUiZk4OSZg",
-  "https://miro.medium.com/v2/resize:fit:1200/0*fl1JwrqzPKvd5FTz.png",
-  "https://yt3.googleusercontent.com/Fjn6AUyl2OYY0HeZ2F9C5TckIEYufbHb-vTXZcwAnoNByAWoCzsp_oy2US_3dIyYgYkrvxuoPA=s176-c-k-c0x00ffffff-no-rj-mo",
 ];
 
 const RollingGallery = ({
@@ -147,9 +145,8 @@ const RollingGallery = ({
               <img
                 src={url}
                 alt="gallery"
-                className="pointer-events-none h-[420px] w-[300px] rounded-[15px] border-[3px] border-red object-cover
-                           transition-transform duration-300 ease-out group-hover:scale-105
-                           sm:h-[100px] sm:w-[220px]"
+                className="pointer-events-none h-[120px] w-[300px] rounded-[15px] border-[3px] border-red object-cover
+                           transition-transform duration-300 ease-out group-hover:scale-105"
               />
             </div>
           ))}
