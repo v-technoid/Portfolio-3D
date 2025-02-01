@@ -10,7 +10,6 @@ import { useEffect, useState } from 'react'
 import Preloader from '../Preloader/Preloader';
 import { AnimatePresence } from 'framer-motion';
 import { default as Footer } from '../components/Sections/Footer'; 
-import VelocityText from '../components/Elements/VelocityText';
 
 import SmoothScrollHero from "../components/Elements/SmoothScroll";
 import  Home from "../components/Parallax/page";
@@ -41,7 +40,6 @@ export function Landing() {
       <Hero />
       <TapeSection />
       <AboutSection />
-      <VelocityText/>
       <Projects />
       <Skills />
       {/* <SmoothScrollHero/> */}

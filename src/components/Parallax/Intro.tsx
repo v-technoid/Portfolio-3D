@@ -1,5 +1,5 @@
 import React from 'react'
-import Background from '../../assets/images/ME.png';
+import Background from '../../assets/images/BWPROFILE.png';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
 

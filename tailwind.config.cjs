@@ -60,6 +60,7 @@ const config = {
     },
     extend: {
       animation: {
+        marquee: 'marquee 15s linear infinite',
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "meteor-effect": "meteor 5s linear infinite",
         "ping-large": "ping-large 1s ease-in-out infinite",
@@ -72,12 +73,19 @@ const config = {
         "line-shadow": "line-shadow 15s linear infinite",
         "text-gradient": "text-gradient 1.5s linear infinite",
       },
+      translate: {
+         '101': '101%',
+        },
       keyframes: {
         "text-gradient": {
           to: {
             backgroundPosition: "200% center",
           },
         },
+        marquee: {
+                    'from': { transform: 'translateX(0%)' },
+                    'to': { transform: 'translateX(-50%)' },
+                  },
         "border-beam": {
           "100%": {
             offsetDistance: "100%",

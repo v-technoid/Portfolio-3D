@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { SectionHeader } from "../Elements/SectionHeader";
 import { Card } from "../Elements/Card";
+import TimelineAnimation from "../Elements/TimeEntry";
 import { CardHeader } from "../Elements/CardHeader";
 import { ToolboxItems } from "../Elements/ToolboxItems";
 import { motion } from "framer-motion";
@@ -26,6 +27,7 @@ import AnimatedText from "../Elements/TextReveal";
 import TextGenerateEffectDemo from "../Elements/Text-Generate";
 import CanvasRevealEffectDemo from "../Elements/canvasrevealeffect";
 import BoxReveal from "../Elements/LineShadow";
+import  VelocityText from "../Elements/VelocityText";
 const toolboxItems = [
   { title: "Next.js", iconType: Nextjs },
   { title: "TypeScript", iconType: Type },
@@ -151,6 +153,10 @@ export const AboutSection = () => {
             </BoxReveal>
           </div>
           <CanvasRevealEffectDemo />
+        </div>
+        <VelocityText/>
+        <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+        <TimelineAnimation />
         </div>
       </section>
     </>
