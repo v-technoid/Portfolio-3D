@@ -1,16 +1,16 @@
-import css from "./tech/css.png";
-import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
-import git from "./tech/git.png";
-import html from "./tech/html.png";
-import javascript from "./tech/javascript.png";
-import mongodb from "./tech/mongodb.png";
-import nodejs from "./tech/nodejs.png";
-import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
-import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import css from "../assets/Tech/css.png";
+import docker from "./Tech/docker.png";
+import figma from "./Tech/figma.png";
+import git from "./Tech/git.png";
+import html from "./Tech/html.png";
+import javascript from "./Tech/javascript.png";
+import mongodb from "./Tech/mongodb.png";
+import nodejs from "./Tech/nodejs.png";
+import reactjs from "./Tech/reactjs.png";
+import redux from "./Tech/redux.png";
+import tailwind from "./Tech/tailwind.png";
+import typescript from "./Tech/typescript.png";
+import threejs from "./Tech/threejs.svg";
 
 export {
   css,
