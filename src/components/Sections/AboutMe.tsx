@@ -10,7 +10,7 @@ import { ToolboxItems } from "../Elements/ToolboxItems";
 import { motion } from "framer-motion";
 import { AboutMeCanvas, Loader } from "@/components";
 import { ColorThemeContext } from "../../providers";
-import "/Users/vishnuppriyanpl/Desktop/Portfolio Project/Portfolio/src/index.css";
+import "../../index.css";
 import { RevealLinks } from "../Elements/RevealLinks";
 import bookcover from "../../assets/images/bookcover.png";
 import { ReactComponent as Nextjs } from "../../assets/images/Nextjs.svg";

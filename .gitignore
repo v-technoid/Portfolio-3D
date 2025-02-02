@@ -32,3 +32,4 @@ dist-ssr
 # Vite configurations
 vite.config.ts.*.mfj
 vite.config.ts.*.mjs
+.vercel
